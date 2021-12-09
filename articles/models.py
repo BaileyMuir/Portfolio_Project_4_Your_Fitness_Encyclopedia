@@ -4,7 +4,7 @@ from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
-STATUS =((0, "Draft"), (1, "Posted"))
+STATUS = ((0, "Draft"), (1, "Posted"))
 
 class Article(models.Model):
     title = models.CharField(max_length=100, unique=True)
@@ -31,7 +31,7 @@ class Article(models.Model):
         return self.article_dislikes.count()
 
 
-class Article_comments(models.Model):
+class ArticleComments(models.Model):
     Article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='article_comments')
     name = models.CharField(max_length=100)
     email = models.EmailField()
