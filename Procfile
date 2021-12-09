@@ -1,0 +1,1 @@
+web: gunicorn your_fitness_encyclopedia.wsgi
